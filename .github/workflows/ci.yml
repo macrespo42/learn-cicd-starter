@@ -33,5 +33,7 @@ jobs:
         with:
           go-version: '1.23.0'
 
-      - name: Run unit tests
-        run: test -z $(go fmt ./...)
+      - name: run styles
+        run: |
+          go fmt ./...
+          git diff --exit-code
